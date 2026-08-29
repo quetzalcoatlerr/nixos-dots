@@ -7,6 +7,8 @@
   
   imports = [
     inputs.nixvim.homeModules.nixvim
+    ./niri/niri.nix
+    ./zellij/zellij.nix
   ];
 
   # home packages
@@ -27,13 +29,10 @@
     heroic
     anytype
     webcord
-
-    fuzzel
-    xwayland-satellite
-    wl-clipboard 
-    noctalia 
+ 
     ghostty 
     helix
+    fastfetch
 
     thunar
     thunar-archive-plugin
@@ -81,34 +80,6 @@
     theme = Kanagawa Dragon
     background-opacity = 0.8
     background-blur = false
-  '';
-
-  xdg.configFile."niri/config.kdl".text = ''
-    spawn-at-startup "noctalia"
-    spawn-at-startup "xwayland-satellite" ":0"
-
-    input {
-      keyboard {
-        xkb {
-          layout "us,ru,sk"
-	  options "grp:shift_alt_toggle"
-	}
-      }
-      touchpad {
-        tap
-	natural-scroll
-      }
-    }
-
-    binds {
-      Mod+Return { spawn "ghostty"; }
-      Mod+D { spawn "fuzzel"; }
-      Mod+B { spawn "brave"; }
-      Mod+Q { close-window; }
-
-      Mod+Left { focus-column-left; }
-      Mod+Right { focus-column-right; }
-    }
   '';
 
   programs.git = {

@@ -51,6 +51,8 @@
 
   environment.systemPackages = with pkgs; [
     git
+    tar
+    gzip
     neovim
     curl
     tuigreet

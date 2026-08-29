@@ -1,0 +1,87 @@
+// --- Основные настройки поведения ---
+pane_frames false
+simplified_ui true
+default_layout "dev"
+mouse_mode true
+scroll_on_output false
+copy_on_select true
+layout_dir "/home/quetzal/.dotfiles/modules/zellij/layouts"
+
+// --- ALT remap ---
+keybinds clear-defaults=true {
+    normal {
+        // smart-splits
+        bind "Ctrl h" { MoveFocus "Left"; }
+        bind "Ctrl l" { MoveFocus "Right"; }
+        bind "Ctrl j" { MoveFocus "Down"; }
+        bind "Ctrl k" { MoveFocus "Up"; }
+    }
+    shared_except "locked" {
+        // modes with ALT over CTRL
+        bind "Alt g" { SwitchToMode "Locked"; }
+        bind "Alt p" { SwitchToMode "Pane"; }
+        bind "Alt t" { SwitchToMode "Tab"; }
+        bind "Alt n" { SwitchToMode "Resize"; }
+        bind "Alt s" { SwitchToMode "Scroll"; }
+        bind "Alt d" { Detach; }
+	      bind "Alt [" { PreviousSwapLayout; }
+	      bind "Alt ]" { NextSwapLayout; }
+        bind "Alt Right" { GoToNextTab; }
+        bind "Alt Left" { GoToPreviousTab; }
+        
+        bind "Alt i" { ToggleFloatingPanes; }
+    }
+    locked {
+        bind "Alt g" { SwitchToMode "Normal"; }
+    }
+    pane {
+        bind "Alt p" { SwitchToMode "Normal"; }
+        bind "n" { NewPane; SwitchToMode "Normal"; }
+        bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "s" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+    }
+    tab {
+        bind "Alt t" { SwitchToMode "Normal"; }
+        bind "n" { NewTab; SwitchToMode "Normal"; }
+        bind "x" { CloseTab; SwitchToMode "Normal"; }
+        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "h" "Left" { GoToPreviousTab; }
+        bind "l" "Right" { GoToNextTab; }
+    }
+    scroll {
+        bind "Alt s" { SwitchToMode "Normal"; }
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "Ctrl f" { PageScrollDown; }
+        bind "Ctrl b" { PageScrollUp; }
+    }
+    resize {
+        bind "Alt n" { SwitchToMode "Normal"; }
+        bind "h" "Left" { Resize "Increase Left"; }
+        bind "l" "Right" { Resize "Increase Right"; }
+        bind "j" "Down" { Resize "Increase Down"; }
+        bind "k" "Up" { Resize "Increase Up"; }
+    }
+}
+
+themes {
+    kanagawa {
+        fg "#DCD7BA"
+        bg "#1F1F28"
+        black "#0D0C10"
+        red "#C34043"
+        green "#76946A"
+        yellow "#C0A36E"
+        blue "#7E9CD8"
+        magenta "#957FB8"
+        cyan "#7AA89F"
+        white "#A6A69C"
+        orange "#FF9E3B"
+    }
+}
+
+theme "kanagawa"
