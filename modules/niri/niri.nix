@@ -7,6 +7,6 @@
     noctalia
     fuzzel
     xwayland-satellite
-    swaylock
+    brightnessctl
   ];
 }

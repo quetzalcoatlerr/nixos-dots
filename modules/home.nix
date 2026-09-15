@@ -34,9 +34,7 @@
     helix
     fastfetch
 
-    thunar
-    thunar-archive-plugin
-    tumbler
+    nemo
   ];
 
   programs.zellij.enable = true;
@@ -51,11 +49,16 @@
       ".." = "cd ..";
 
       rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles/#laptop";
+
     };
 
     initExtra = ''
       mkcd() {
         mkdir -p "$1" && cd "$1"
+      }
+
+      crun() {
+        gcc "$1" -Wall -Wextra -o prog && ./prog 
       }
 
       drun() {
@@ -78,7 +81,7 @@
     font-thicken = false
 
     theme = Kanagawa Dragon
-    background-opacity = 0.8
+    background-opacity = 1
     background-blur = false
   '';
 
@@ -103,6 +106,41 @@
 
   programs.nixvim = {
     enable = true;
+
+    globals.mapleader = "";
+
+    keymaps = [
+      # --- File Navigation (Neo-tree) ---
+      {
+        mode = "n";
+	key = "e";
+	action = "Neotree toggle";
+      }
+      # --- Telescope ---
+      {
+        mode = "n";
+        key = "<leader>ff";
+        action = "<cmd>Telescope find_files<cr>";
+      }
+      {
+        mode = "n";
+        key = "<leader>sg";
+        action = "<cmd>Telescope live_grep<cr>";
+      }
+      # --- Bufferline ---
+      # Shift+H и Shift+L для быстрого перелистывания файлов
+      {
+        mode = "n";
+        key = "<S-h>";
+        action = "<cmd>bprevious<cr>";
+      }
+      {
+        mode = "n";
+        key = "<S-l>";
+        action = "<cmd>bnext<cr>";
+      }
+    ];
+
     colorschemes.kanagawa.enable = true;
 
     plugins = {
@@ -112,6 +150,34 @@
       telescope.enable = true;
       neo-tree.enable = true;
       which-key.enable = true;
+
+      dashboard = {
+        enable = true;
+        settings = {
+          theme = "doom";
+          config = {
+            header = [
+              "                                 "
+              "  ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖       "
+              "  ▜███▙       ▜███▙  ▟███▛       "
+              "   ▜███▙       ▜███▙▟███▛        "
+              "    ▜███▙       ▜██████▛         "
+              "     ▜███▙       ▜████▛          "
+              "      ▜███▙       ▜██▛           "
+              "       ▜███▙       ▜▛            "
+              "        ▜███▙      ▟█            "
+              "         ▜███▙    ▟███           "
+              "                                 "
+              "          N I X V I M            "
+            ];
+            center = [
+              { action = "Telescope find_files"; desc = " Find file"; icon = " "; key = "f"; }
+              { action = "Telescope live_grep";  desc = " Find text"; icon = " "; key = "g"; }
+              { action = "qa";                   desc = " Quit";      icon = " "; key = "q"; }
+            ];
+	  };
+	};
+      };
       blink-cmp = {
         enable = true;
 	settings = {
@@ -143,6 +209,18 @@
 	};
       };
     };
+  };
+  
+  services.mako = {
+    enable = true;
+    settings = {
+      defaultTimeout = 5000;
+      backgroundColor = "#1e1e1e";
+      borderColor = "#7fc8ff";
+      borderSize = 2;
+      borderRadius = 0;
+      font = "Monocraft 11";
+    }; 
   };
 
   programs.home-manager.enable = true;

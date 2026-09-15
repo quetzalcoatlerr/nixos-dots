@@ -1,4 +1,4 @@
-// --- Основные настройки поведения ---
+// --- Settings ---
 pane_frames false
 simplified_ui true
 default_layout "dev"
@@ -24,8 +24,8 @@ keybinds clear-defaults=true {
         bind "Alt n" { SwitchToMode "Resize"; }
         bind "Alt s" { SwitchToMode "Scroll"; }
         bind "Alt d" { Detach; }
-	      bind "Alt [" { PreviousSwapLayout; }
-	      bind "Alt ]" { NextSwapLayout; }
+	bind "Alt [" { PreviousSwapLayout; }
+	bind "Alt ]" { NextSwapLayout; }
         bind "Alt Right" { GoToNextTab; }
         bind "Alt Left" { GoToPreviousTab; }
         

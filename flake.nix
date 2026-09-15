@@ -22,6 +22,7 @@
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
+	  home-manager.backupFileExtension = "backup";
 	  home-manager.useUserPackages = true;
 	  home-manager.users.quetzal = import ./modules/home.nix;
 	  home-manager.extraSpecialArgs = { inherit inputs; };
