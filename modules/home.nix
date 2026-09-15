@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.username = "quetzal";
@@ -9,6 +9,7 @@
     inputs.nixvim.homeModules.nixvim
     ./niri/niri.nix
     ./zellij/zellij.nix
+    ./ghostty/ghostty.nix
   ];
 
   # home packages
@@ -19,6 +20,7 @@
     curl 
     wget 
     comma
+    bat
     
     lazygit 
     lazydocker 
@@ -66,24 +68,6 @@
       }
     '';
   };
-
-  xdg.configFile."ghostty/config".text = ''
-    window-decoration = false
-    window-width = 1600
-    window-height = 1000
-
-    window-padding-x = 6
-    window-padding-y = 6
-
-    font-family = "Departure Mono"
-    font-family = "JetBrainsMono Nerd Font"
-    font-size = 16.5
-    font-thicken = false
-
-    theme = Kanagawa Dragon
-    background-opacity = 1
-    background-blur = false
-  '';
 
   programs.git = {
     enable = true;

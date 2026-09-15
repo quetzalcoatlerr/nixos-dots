@@ -1,0 +1,13 @@
+window-decoration = false
+
+window-padding-x = 6
+window-padding-y = 6
+
+font-family = "Departure Mono"
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16.5
+font-thicken = false
+
+theme = Kanagawa Dragon
+background-opacity = 0.8
+background-blur = false

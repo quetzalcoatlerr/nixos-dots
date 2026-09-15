@@ -72,6 +72,11 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+gestures {
+  hot-corners {
+    off
+  }
+}
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -345,13 +350,17 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 6
     clip-to-geometry true
 }
 
 window-rule {
-  match app-id="Brave-browser"
-  open-maximized true
+    match app-id="com.mitchellh.ghostty"
+    draw-border-with-background false
+}
+window-rule {
+    match app-id="Brave-browser"
+    open-maximized true
 }
 
 binds {
