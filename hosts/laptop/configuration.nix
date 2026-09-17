@@ -69,6 +69,7 @@
     neovim
     curl
     tuigreet
+    docker-compose
   ];
 
   environment.sessionVariables = {

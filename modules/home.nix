@@ -89,7 +89,7 @@
 
   xdg.configFile."direnv/direnv.toml".text = ''
     [global]
-    hide-env-diff = true;
+    hide-env-diff = true
   '';
 
   services.mako = {
