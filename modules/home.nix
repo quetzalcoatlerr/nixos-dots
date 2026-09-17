@@ -11,13 +11,13 @@
     ./zellij/zellij.nix
     ./ghostty/ghostty.nix
     ./nixvim/nixvim.nix
+    ./yazi/yazi.nix
   ];
 
   # home packages
   home.packages = with pkgs; [
     gcc 
     gnumake 
-    ripgrep 
     curl 
     wget 
     comma
