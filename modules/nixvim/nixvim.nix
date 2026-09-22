@@ -1,9 +1,20 @@
-{ inputs, ... }:
+{ ... }:
 {
   programs.nixvim = {
     enable = true;
 
     globals.mapleader = "";
+
+    clipboard.providers.wl-copy.enable = true;
+
+    opts = {
+      number = true;
+      relativenumber = true;
+      clipboard = "unnamedplus";
+
+      expandtab = true;
+      shiftwidth = 2;
+    };
 
     keymaps = [
       # --- File Navigation (Neo-tree) ---

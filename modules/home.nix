@@ -16,10 +16,10 @@
 
   # home packages
   home.packages = with pkgs; [
-    gcc 
+    gcc
     gnumake 
     curl 
-    wget 
+    wget
     comma
     bat
     
@@ -33,8 +33,7 @@
     anytype
     webcord
  
-    ghostty 
-    helix
+    ghostty
     fastfetch
   ];
 
@@ -89,7 +88,7 @@
 
   xdg.configFile."direnv/direnv.toml".text = ''
     [global]
-    hide-env-diff = true
+    hide_env_diff = true
   '';
 
   services.mako = {
