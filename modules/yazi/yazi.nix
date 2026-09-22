@@ -11,7 +11,7 @@
     ffmpegthumbnailer # Video preview
     p7zip             # archives
     jq                # JSON
-    poppler_utils     # PDF
+    poppler-utils     # PDF
     fd                # ultra-fast find
     ripgrep           # ultra-fast grep
     fzf               # Fuzzy-search

@@ -16,7 +16,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use CachyOS kernel.
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
 
