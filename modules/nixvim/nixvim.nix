@@ -17,6 +17,13 @@
     };
 
     keymaps = [
+      # --- which-key ---
+      {
+        mode = "n";
+        key = "<leader><leader>";
+        action = "WhichKey";
+
+      }
       # --- File Navigation (Neo-tree) ---
       {
         mode = "n";
@@ -57,6 +64,21 @@
       telescope.enable = true;
       neo-tree.enable = true;
       which-key.enable = true;
+      editorconfig.enable = true;
+      lsp-format.enabe = true;
+    # found a widely used formatting plugin, for future use
+    # conform = {
+    #   enable = true;
+    #   formatOnSave = {
+    #     lspFallback = true;
+    #     timeoutMs = 500;
+    #   };
+    #   formattersByFt = {
+    #     nix = [ "nixfmt" ];
+    #     c = [ "clang-format" ];
+    #     haskell = [ "ormolu" ];
+    #   };
+    # };
 
       dashboard = {
         enable = true;
@@ -85,6 +107,7 @@
           };
         };
       };
+
       blink-cmp = {
         enable = true;
         settings = {
@@ -93,6 +116,7 @@
           };
         };
       };
+
       notify.enable = true;
       noice = {
         enable = true;
