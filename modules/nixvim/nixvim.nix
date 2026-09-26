@@ -65,7 +65,7 @@
       neo-tree.enable = true;
       which-key.enable = true;
       editorconfig.enable = true;
-      lsp-format.enabe = true;
+      lsp-format.enable = true;
     # found a widely used formatting plugin, for future use
     # conform = {
     #   enable = true;
